@@ -1,10 +1,15 @@
-/** @type {import('tailwindcss').Config} */
+
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require('tailwindcss/colors')
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    screens: {
+      sm: "480px",
+      md: "768px",
+      lg: "976px",
+      xl: "1440px",
+    },
     colors: {
       primary: '#00923F',
       secondary: '#A6FFA1',
@@ -14,7 +19,18 @@ module.exports = {
       white: '#FFFFFF',
       black: '#000000'
     },
-    extend: {},
+    extend: {
+      // fontFamily: {
+      //   sans: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.serif],
+      //   jarkata: ["Plus Jakarta Sans"],
+      // },
+      // width: {
+      //   128: "33rem",
+      //   130: "36rem",
+      //   120: "29rem",
+      // },
+    },
   },
   plugins: [],
-}
+};
+
