@@ -45,7 +45,7 @@ export default function Dashboard() {
         <DashboardLayout>
             <section className='w-full h-full py-4'>
                 {/* breadcrumb */}
-                <span className='my-8 text-black/75'>Dashboard</span>
+                <span className='my-8 text-primary'>Dashboard</span>
                 {/* cards */}
                 <div className="grid md:grid-cols-6 grid-cols-1 gap-10 items-start justify-items-stretch">
                     <main className=' w-full md:col-span-4 flex flex-col items-start justify-center'>

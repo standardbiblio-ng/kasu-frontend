@@ -1,20 +1,50 @@
+import EditProfileModal from '@component/Modals/EditProfileModal'
+import { useState } from 'react';
 import DashboardLayout from '../../layout/dashboardLayout'
 
 export default function Profile() {
 
+    const [showModal, setShowModal] = useState(false);
+
+    const closeModal = () => {
+        setShowModal(!showModal)
+    }
     return (
         <DashboardLayout>
-            <h1>Profile</h1>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sapiente reprehenderit ut, autem sed neque doloribus vitae dolorem, veniam molestias ex quod qui veritatis dicta inventore rerum. Officiis natus officia ratione.
-                Rerum maiores veniam, consectetur autem ipsam, sit perferendis provident illo aliquam ipsa dolores obcaecati mollitia, cum optio blanditiis. Id aliquid debitis quam iure repudiandae ullam sequi sunt ipsum est consequatur?
-                Ipsum aliquam veniam eum repellendus quaerat quis accusantium perspiciatis dicta incidunt nemo placeat illum dolor atque possimus, in assumenda consequatur itaque dolorum provident. Unde laudantium libero voluptate eveniet cum dicta.
-                Fuga, repudiandae? Cumque, accusantium? Vitae inventore laborum quasi maxime quibusdam, a nemo odit hic pariatur distinctio. Maiores dolor consequatur praesentium, porro voluptatibus cupiditate labore quas beatae aut perferendis natus illum!
-                Reiciendis minus, dolores maiores dolore modi cumque ipsum soluta in fugit neque ut odit? Incidunt, minima! Mollitia voluptatibus autem provident? Architecto alias perferendis accusamus. Autem praesentium excepturi doloribus totam omnis.
-                Quo eveniet earum ea quam dolore asperiores. Voluptate eligendi ullam, harum sapiente cumque consequatur exercitationem suscipit autem, eum vero maiores architecto vitae, nisi fugit. Eos officiis harum earum veniam sequi.
-                Non omnis fugit accusamus incidunt. Est doloremque modi reprehenderit deleniti expedita optio ipsa ipsam delectus quae, nam cupiditate deserunt voluptatem adipisci quos accusamus nemo dolorum. Ut reiciendis dignissimos accusamus voluptas.
-                Deleniti sapiente, a facere libero excepturi praesentium sed consectetur eaque veniam ad necessitatibus at obcaecati dolor fuga ipsum quis! Laborum similique delectus voluptate perspiciatis et exercitationem cum vitae magni non!
-                Temporibus rem fuga quisquam doloribus maxime quos, delectus aspernatur asperiores optio illum incidunt harum dolor, eaque enim, est sint. Ab dolore amet voluptatem vel voluptas magni quia rerum autem. Fuga?
-                Odit consequatur quam molestiae necessitatibus, deleniti veritatis officiis atque soluta quasi nesciunt amet ipsa tempora sequi praesentium quod, obcaecati inventore ipsam exercitationem? Provident explicabo debitis quo cupiditate dicta minus culpa.</p>
+            <section className='w-full h-full py-4'>
+                {/* breadcrumb */}
+                <span className='my-8 text-primary'>Profile</span>
+                <div className="my-8 w-fit h-fit py-8 px-4 bg-white grid grid-cols-3 gap-5 items-start justify-items-stretch rounded-md">
+                    <div className="col-span-1">
+                        <ul className='text-black font-semibold text-lg'>
+                            <li className='my-4'>First Name:</li>
+                            <li className='my-4'>Middle Name:</li>
+                            <li className='my-4'>Last Name:</li>
+                            <li className='my-4'>Email Address:</li>
+                            <li className='my-4'>Gender:</li>
+                            <li className='my-4'>Date of Birth:</li>
+                            <li className='my-4'>Jamb Number:</li>
+                            <li className='my-4'>Phone Number:</li>
+                        </ul>
+                    </div>
+                    <div className="col-span-2">
+                        <ul className='text-black/60 text-lg'>
+                            <li className='my-4'>Abbie</li>
+                            <li className='my-4'>Timothy</li>
+                            <li className='my-4'>Kingsley</li>
+                            <li className='my-4'>abbiekingsley@gmail.com</li>
+                            <li className='my-4'>Male</li>
+                            <li className='my-4'>26 Feb 1998</li>
+                            <li className='my-4'>8465454657</li>
+                            <li className='my-4'>+234 806 467 8765</li>
+                        </ul>
+                    </div>
+                </div>
+                <button onClick={() => { setShowModal(true) }} className='px-6 py-2 text-lg font-normal bg-btnColor text-white rounded-md'>update</button>
+                <EditProfileModal show={showModal} close={closeModal} />
+
+            </section>
+
         </DashboardLayout>
     )
 }

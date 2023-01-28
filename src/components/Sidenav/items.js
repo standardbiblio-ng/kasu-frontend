@@ -17,7 +17,7 @@ export default function SidenavItems() {
     const { asPath } = useRouter();
     const { open } = useToggle();
     return (
-        <ul className="pl-5 mx-auto w-full mt-[10rem]">
+        <ul className="pl-5 mx-auto w-full mt-[8rem]">
             <li>
                 {data.map((item) => (
                     <Link href={item.link} key={item.title}>
@@ -32,7 +32,7 @@ export default function SidenavItems() {
                             >
                                 {item.title}
                             </span>
-                            {/* <span className={item.link === asPath ? 'absolute -right-10 w-[4rem] aspect-square  rounded-tl-full rounded-bl-full bg-[#E5E5E5]' : ''}></span> */}
+                            {/* <span className={item.link === asPath ? 'absolute -right-8 w-[4rem] aspect-square  rounded-tl-full rounded-bl-full bg-[#E5E5E5]' : ''}></span> */}
                         </div>
                     </Link>
                 ))}
