@@ -1,0 +1,701 @@
+[{
+  "hostel_name": "BLOCK C",
+  "room_number": 51,
+  "number_of_bed": 3,
+  "cost": "$457532.61",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 86,
+  "number_of_bed": 5,
+  "cost": "$731715.98",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 63,
+  "number_of_bed": 3,
+  "cost": "$147599.35",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 29,
+  "number_of_bed": 5,
+  "cost": "$759328.94",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 193,
+  "number_of_bed": 3,
+  "cost": "$315121.38",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 162,
+  "number_of_bed": 5,
+  "cost": "$454287.52",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 147,
+  "number_of_bed": 3,
+  "cost": "$133942.61",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 61,
+  "number_of_bed": 3,
+  "cost": "$455829.22",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 141,
+  "number_of_bed": 1,
+  "cost": "$145640.00",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 180,
+  "number_of_bed": 1,
+  "cost": "$273625.41",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 150,
+  "number_of_bed": 4,
+  "cost": "$788736.18",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 153,
+  "number_of_bed": 3,
+  "cost": "$201734.21",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 33,
+  "number_of_bed": 4,
+  "cost": "$96022.68",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 8,
+  "number_of_bed": 5,
+  "cost": "$192330.71",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 119,
+  "number_of_bed": 6,
+  "cost": "$628791.44",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 141,
+  "number_of_bed": 6,
+  "cost": "$442455.25",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 23,
+  "number_of_bed": 5,
+  "cost": "$468038.28",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 28,
+  "number_of_bed": 4,
+  "cost": "$53730.27",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 94,
+  "number_of_bed": 3,
+  "cost": "$119945.15",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 26,
+  "number_of_bed": 4,
+  "cost": "$446348.60",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 21,
+  "number_of_bed": 6,
+  "cost": "$694534.61",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 93,
+  "number_of_bed": 6,
+  "cost": "$444705.61",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 108,
+  "number_of_bed": 2,
+  "cost": "$728064.96",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 22,
+  "number_of_bed": 6,
+  "cost": "$583564.67",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 114,
+  "number_of_bed": 2,
+  "cost": "$992546.21",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 135,
+  "number_of_bed": 2,
+  "cost": "$320029.38",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 116,
+  "number_of_bed": 4,
+  "cost": "$487920.10",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 169,
+  "number_of_bed": 2,
+  "cost": "$18700.95",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 123,
+  "number_of_bed": 1,
+  "cost": "$640910.20",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 34,
+  "number_of_bed": 4,
+  "cost": "$895890.22",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 69,
+  "number_of_bed": 1,
+  "cost": "$585732.16",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 141,
+  "number_of_bed": 6,
+  "cost": "$424819.07",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 193,
+  "number_of_bed": 2,
+  "cost": "$293605.82",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 97,
+  "number_of_bed": 6,
+  "cost": "$198729.78",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 133,
+  "number_of_bed": 5,
+  "cost": "$908159.48",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 145,
+  "number_of_bed": 6,
+  "cost": "$428050.23",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 21,
+  "number_of_bed": 3,
+  "cost": "$965883.13",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 23,
+  "number_of_bed": 1,
+  "cost": "$705121.09",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 44,
+  "number_of_bed": 4,
+  "cost": "$966373.84",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 149,
+  "number_of_bed": 4,
+  "cost": "$653489.15",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 137,
+  "number_of_bed": 4,
+  "cost": "$459689.47",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 18,
+  "number_of_bed": 3,
+  "cost": "$661697.64",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 76,
+  "number_of_bed": 4,
+  "cost": "$586706.21",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 70,
+  "number_of_bed": 6,
+  "cost": "$417302.22",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 87,
+  "number_of_bed": 4,
+  "cost": "$769393.73",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 9,
+  "number_of_bed": 4,
+  "cost": "$207818.43",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 15,
+  "number_of_bed": 5,
+  "cost": "$512958.84",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 11,
+  "number_of_bed": 2,
+  "cost": "$587826.19",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 60,
+  "number_of_bed": 5,
+  "cost": "$590410.72",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 16,
+  "number_of_bed": 1,
+  "cost": "$392907.49",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 132,
+  "number_of_bed": 1,
+  "cost": "$420963.98",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 136,
+  "number_of_bed": 2,
+  "cost": "$845410.00",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 54,
+  "number_of_bed": 2,
+  "cost": "$883644.81",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 159,
+  "number_of_bed": 1,
+  "cost": "$424719.09",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 57,
+  "number_of_bed": 6,
+  "cost": "$625792.81",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 136,
+  "number_of_bed": 5,
+  "cost": "$820281.93",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 1,
+  "number_of_bed": 4,
+  "cost": "$524747.21",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 21,
+  "number_of_bed": 4,
+  "cost": "$436419.38",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 26,
+  "number_of_bed": 3,
+  "cost": "$852245.35",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 80,
+  "number_of_bed": 6,
+  "cost": "$363273.28",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 54,
+  "number_of_bed": 4,
+  "cost": "$351364.38",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 137,
+  "number_of_bed": 4,
+  "cost": "$757133.29",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 8,
+  "number_of_bed": 1,
+  "cost": "$660073.69",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 12,
+  "number_of_bed": 2,
+  "cost": "$520934.01",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 143,
+  "number_of_bed": 2,
+  "cost": "$951897.54",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 90,
+  "number_of_bed": 6,
+  "cost": "$557583.38",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 151,
+  "number_of_bed": 6,
+  "cost": "$138454.55",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 54,
+  "number_of_bed": 4,
+  "cost": "$762521.57",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 65,
+  "number_of_bed": 4,
+  "cost": "$753042.24",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 68,
+  "number_of_bed": 2,
+  "cost": "$601024.07",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 24,
+  "number_of_bed": 4,
+  "cost": "$88284.56",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 65,
+  "number_of_bed": 4,
+  "cost": "$75045.02",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 169,
+  "number_of_bed": 6,
+  "cost": "$124941.65",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 27,
+  "number_of_bed": 4,
+  "cost": "$940556.51",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 162,
+  "number_of_bed": 6,
+  "cost": "$687077.22",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 129,
+  "number_of_bed": 1,
+  "cost": "$546543.85",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 100,
+  "number_of_bed": 1,
+  "cost": "$249885.15",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 142,
+  "number_of_bed": 6,
+  "cost": "$153867.82",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 17,
+  "number_of_bed": 1,
+  "cost": "$474732.00",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 57,
+  "number_of_bed": 5,
+  "cost": "$844134.61",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 52,
+  "number_of_bed": 3,
+  "cost": "$645395.47",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 181,
+  "number_of_bed": 1,
+  "cost": "$165680.71",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 2",
+  "room_number": 80,
+  "number_of_bed": 4,
+  "cost": "$704403.08",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 74,
+  "number_of_bed": 5,
+  "cost": "$159639.01",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK C",
+  "room_number": 104,
+  "number_of_bed": 2,
+  "cost": "$394308.34",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH GIRLS 1",
+  "room_number": 6,
+  "number_of_bed": 6,
+  "cost": "$345324.34",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 135,
+  "number_of_bed": 3,
+  "cost": "$402681.98",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 48,
+  "number_of_bed": 1,
+  "cost": "$883732.20",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 89,
+  "number_of_bed": 5,
+  "cost": "$801003.76",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 2,
+  "number_of_bed": 1,
+  "cost": "$676485.63",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 72,
+  "number_of_bed": 3,
+  "cost": "$598254.48",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 93,
+  "number_of_bed": 6,
+  "cost": "$722949.34",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 2",
+  "room_number": 8,
+  "number_of_bed": 6,
+  "cost": "$283741.28",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 96,
+  "number_of_bed": 5,
+  "cost": "$911269.66",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 110,
+  "number_of_bed": 6,
+  "cost": "$316159.08",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK B",
+  "room_number": 53,
+  "number_of_bed": 5,
+  "cost": "$537701.29",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 133,
+  "number_of_bed": 5,
+  "cost": "$338681.06",
+  "status": "available",
+  "action": null
+}, {
+  "hostel_name": "BLOCK A",
+  "room_number": 122,
+  "number_of_bed": 5,
+  "cost": "$418742.56",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 182,
+  "number_of_bed": 6,
+  "cost": "$287608.98",
+  "status": "unavailable",
+  "action": null
+}, {
+  "hostel_name": "NH BOYS 1",
+  "room_number": 83,
+  "number_of_bed": 3,
+  "cost": "$108544.14",
+  "status": "unavailable",
+  "action": null
+}]

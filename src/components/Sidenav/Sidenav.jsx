@@ -6,7 +6,7 @@ import SidenavFooter from "./footer";
 
 const style = {
   mobilePosition: {
-    left: "left-0 ",
+    left: "left-0",
     right: "right-0 lg:left-0",
   },
   container: `pb-32 lg:pb-12 relative flex flex-col items-start justify-between`,

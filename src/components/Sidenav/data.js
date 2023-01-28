@@ -1,34 +1,46 @@
-import HomeIcon from './icons/home';
-import StatusIcon from './icons/status';
-import CreditsIcon from './icons/credits';
-import ArchivesIcon from './icons/archives';
-import DocumentationIcon from './icons/documentation';
+import DashboardIcon from './icons/dashboard';
+import AdmissionIcon from './icons/admission';
+import CoursesIcon from './icons/courses';
+import ResultsIcon from './icons/results';
+import PaymentIcon from './icons/payment';
+import ProfileIcon from './icons/profile';
+import AccomodationIcon from './icons/accomodation';
 
 const data = [
     {
         title: 'dashboard',
-        icon: <HomeIcon />,
+        icon: <DashboardIcon />,
         link: '/dashboard',
     },
     {
         title: 'Profile',
-        icon: <DocumentationIcon />,
+        icon: <ProfileIcon />,
         link: '/dashboard/profile',
     },
     {
-        title: 'admission',
-        icon: <StatusIcon />,
-        link: '/dashboard/admission',
-    },
-    {
         title: 'Payment',
-        icon: <ArchivesIcon />,
+        icon: <PaymentIcon />,
         link: '/dashboard/payment',
     },
     {
+        title: 'admission',
+        icon: <AdmissionIcon />,
+        link: '/dashboard/admission',
+    },
+    {
+        title: 'accomodation',
+        icon: <AccomodationIcon />,
+        link: '/dashboard/accomodation',
+    },
+    {
         title: 'Courses',
-        icon: <CreditsIcon />,
+        icon: <CoursesIcon />,
         link: '/dashboard/courses',
+    },
+    {
+        title: 'Result',
+        icon: <ResultsIcon />,
+        link: '/dashboard/result',
     },
 
 ];

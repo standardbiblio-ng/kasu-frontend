@@ -1,0 +1,36 @@
+[{
+  "category": "Acceptance fee",
+  "session": "2019/2022",
+  "amount": "$373379704.64",
+  "outstanding": "$79876410.44",
+  "status": "paid",
+  "action": null
+}, {
+  "category": "school fee",
+  "session": "2021/2022",
+  "amount": "$488998519.88",
+  "outstanding": "$19244221.96",
+  "status": "pending",
+  "action": null
+}, {
+  "category": "hostel fees",
+  "session": "2019/2022",
+  "amount": "$851412216.77",
+  "outstanding": "$99309195.60",
+  "status": "outstanding",
+  "action": null
+}, {
+  "category": "library fees",
+  "session": "2020/2021",
+  "amount": "$259755298.70",
+  "outstanding": "$34631258.89",
+  "status": "outstanding",
+  "action": null
+}, {
+  "category": "registration fee",
+  "session": "2018/2019",
+  "amount": "$439420518.74",
+  "outstanding": "$53810944.47",
+  "status": "pending",
+  "action": null
+}]
