@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useToggle } from '../../context/dashboard.context';
 
-import data from './data';
+import data from './studentNavItems';
 
 
 const style = {
