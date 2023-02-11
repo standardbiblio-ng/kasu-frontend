@@ -1,4 +1,4 @@
-import SidenavItems from "./items";
+import SidenavItems from "./studentItems";
 import SidenavHeader from "./header";
 import css from "./style.module.css";
 import { useToggle } from "../../context/dashboard.context";

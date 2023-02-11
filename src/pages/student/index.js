@@ -94,8 +94,7 @@ export default function Dashboard() {
                         </div>
                     </main>
 
-                    <aside className='w-full md:col-span-2 flex justify-end'>
-                        {/* calender */}
+                    {/* <aside className='w-full col-span-2 flex justify-end'>
                         <div className="w-5/6 aspect-square text-xs bg-white rounded-md flex items-center justify-center">
                             <FullCalendar
                                 plugins={[dayGridPlugin]}
@@ -107,7 +106,7 @@ export default function Dashboard() {
                                 ]}
                             />
                         </div>
-                    </aside>
+                    </aside> */}
                 </div>
 
             </section>
