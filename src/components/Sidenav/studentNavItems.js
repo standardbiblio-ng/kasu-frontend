@@ -10,37 +10,37 @@ const data = [
     {
         title: 'dashboard',
         icon: <DashboardIcon />,
-        link: '/dashboard',
+        link: '/student',
     },
     {
         title: 'Profile',
         icon: <ProfileIcon />,
-        link: '/dashboard/profile',
+        link: '/student/profile',
     },
     {
         title: 'Payment',
         icon: <PaymentIcon />,
-        link: '/dashboard/payment',
+        link: '/student/payment',
     },
     {
         title: 'admission',
         icon: <AdmissionIcon />,
-        link: '/dashboard/admission',
+        link: '/student/admission',
     },
     {
         title: 'accomodation',
         icon: <AccomodationIcon />,
-        link: '/dashboard/accomodation',
+        link: '/student/accomodation',
     },
     {
         title: 'Courses',
         icon: <CoursesIcon />,
-        link: '/dashboard/courses',
+        link: '/student/courses',
     },
     {
         title: 'Result',
         icon: <ResultsIcon />,
-        link: '/dashboard/result',
+        link: '/student/result',
     },
 
 ];
