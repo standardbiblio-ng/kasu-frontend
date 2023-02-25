@@ -20,6 +20,7 @@ module.exports = {
       black: '#000000'
     },
     extend: {
+      'auth_img': "url(@/assets/images/auth_img.svg)"
       // fontFamily: {
       //   sans: ["Plus Jakarta Sans", ...defaultTheme.fontFamily.serif],
       //   jarkata: ["Plus Jakarta Sans"],
