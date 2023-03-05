@@ -1,6 +1,14 @@
 import profile from "@assets/images/profile.png";
-
+import { useUserStore } from "@store/userStore.store";
+import { useEffect, useState } from "react";
 export default function Topbar() {
+  const [userData, setUserData] = useState({})
+  const [isAuthenticated, setIsAuthenticated] = useState({})
+  useEffect(() => {
+    setUserData(useUserStore.getState().userDetails.user)
+    setIsAuthenticated(useUserStore.getState().isAuthenticated)
+
+  })
   return (
     <header className="w-[99%] py-2 items-center  z-10 bg-secondary rounded-sm sticky top-2">
       <div className="flex flex-center flex-col h-full justify-center mx-auto relative px-3 text-black/90 z-10">
@@ -54,7 +62,7 @@ export default function Topbar() {
                 />
               </svg>
             </a>
-            <p className="mx-8 text-lg font-semibold">John Doe</p>
+            <p className="mx-8 text-lg font-semibold">{userData.lastName} {userData.firstname}</p>
             <div
               style={{
                 backgroundImage: `url(${profile.src})`,

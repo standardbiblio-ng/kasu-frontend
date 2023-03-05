@@ -1,8 +1,9 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useToggle } from '../../context/dashboard.context';
-
+import { useUserStore } from '@store/userStore.store';
 import data from './staffNavItems';
+import { useEffect, useState } from 'react';
 
 
 const style = {
@@ -14,12 +15,17 @@ const style = {
 };
 
 export default function SidenavItems() {
+    const [navs, setNavs] = useState()
     const { asPath } = useRouter();
     const { open } = useToggle();
+    useEffect(() => {
+        const user = useUserStore.getState().userDetails.user
+        setNavs(data[user?.role])
+    })
     return (
         <ul className="pl-5 mx-auto w-full mt-[8rem]">
             <li>
-                {data.map((item) => (
+                {navs?.map((item) => (
                     <Link href={item.link} key={item.title}>
                         <div className={`my-2 ${item.link === asPath ? style.active : style.link}`}>
                             <div
