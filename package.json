@@ -17,14 +17,17 @@
     "formik": "^2.2.9",
     "lodash": "^4.17.21",
     "next": "13.1.1",
+    "prop-types": "^15.8.1",
     "react": "18.2.0",
     "react-circular-progressbar": "^2.1.0",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
     "react-loading-skeleton": "^3.1.0",
-    "react-query": "^3.39.2",
+    "react-query": "3.39.1",
     "react-table": "^7.8.0",
     "react-toastify": "^9.1.1",
-    "yup": "^0.32.11"
+    "yup": "^0.32.11",
+    "zustand": "4.0.0-rc.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.13",

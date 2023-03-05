@@ -17,7 +17,8 @@ module.exports = {
       btnColor: '#F06543',
       btnWarning: '#FFB140',
       white: '#FFFFFF',
-      black: '#000000'
+      black: '#000000',
+      danger: '#FF0000',
     },
     extend: {
       'auth_img': "url(@/assets/images/auth_img.svg)"
