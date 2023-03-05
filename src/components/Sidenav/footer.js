@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useToggle } from '@context/dashboard.context';
 import footerData from './footerData';
-
+import { useLogoutUser } from '@hooks/useLogoutUser.hook';
 
 const style = {
     title: `mx-4 text-sm`,
@@ -16,6 +16,10 @@ const style = {
 export default function SidenavFooter() {
     const { asPath } = useRouter();
     const { open } = useToggle();
+    const { logoutHandler } = useLogoutUser();
+    const logout = () => {
+        logoutHandler()
+    }
     return (
         <ul className="pl-5 mx-auto w-full absolute bottom-10">
             <li>
@@ -38,7 +42,7 @@ export default function SidenavFooter() {
                 ))}
             </li>
             <li>
-                <button type="" className='w-full' >
+                <button type="" className='w-full' onClick={logout} >
                     <div className={`my-2 ${style.link}`}>
                         <div
                             className='p-2'

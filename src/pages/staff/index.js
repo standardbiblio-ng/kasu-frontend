@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react'
 import DashboardLayout from '@layout/staffDashboardLayout'
 import {
     CircularProgressbar,
@@ -8,8 +9,14 @@ import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import Analytics from '@component/Staff/Analytics';
 import { GenericTable } from '@component/Table/GenericTable';
-export default function Dashboard() {
 
+import { useFetchUserDetails } from '@hooks/useFetchUserDetails.hook';
+export default function Dashboard() {
+    useEffect(() => {
+        const fetchUserDetails = () => {
+
+        }
+    })
 
     const analyticsData = [
         {
@@ -85,7 +92,7 @@ export default function Dashboard() {
         accessor: "action",
     }
     ]
-    const data = [
+    const tableData = [
         {
             course_name: 'COSC401',
             unit: 3,
@@ -94,6 +101,8 @@ export default function Dashboard() {
 
         }
     ]
+
+    const { data, isLoading, isFetching } = useFetchUserDetails()
     return (
         <DashboardLayout>
             <section className='w-full h-full py-4'>
@@ -107,7 +116,7 @@ export default function Dashboard() {
                                 <Analytics key={items.id} icon={items.icon} title={items.title} pathColor={items.pathColor} counter={items.counter} />
                             ))}
                         </div>
-                        <GenericTable data={data} columns={columns} />
+                        <GenericTable data={tableData} columns={columns} />
                     </main>
 
                     {/* <aside className='w-full col-span-2 flex justify-end'>
