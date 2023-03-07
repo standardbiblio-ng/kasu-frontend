@@ -7,10 +7,9 @@ const EditProfileModal = ({ show, close }) => {
 
   return (
     <div className="w-screen h-screen absolute inset-0">
-      <div
-        className="bg-black opacity-70 w-screen h-screen absolute z-50 inset-0"
-        onClick={close}
-      ></div>
+      <div className="bg-black opacity-70 w-screen h-screen absolute z-50 inset-0"
+        onClick={close}>
+      </div>
       <main className="antialiased overflow-x-hidden">
         <div className="relative px-4 min-h-screen md:flex md:items-center md:justify-center">
           <div className="bg-white w-1/3 max-h-[90vh] overflow-y-scroll py-10 rounded-lg fixed z-50 flex flex-col items-start px-8">
