@@ -1,13 +1,13 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import axios from "axios";
 import { backendApiURL } from "@config/index";
-import { useUserCredentialsStore } from "@store/userStore.store";
+import { useUserStore } from "@store/userStore.store";
 
 const instanceSettings = {
   baseURL: backendApiURL,
   timeout: 300000,
 };
-let jwt = useUserCredentialsStore?.getState()?.userDetails?.accessToken;
+let jwt = useUserStore?.getState()?.userDetails?.token;
 
 function formatResponseError({ response, ...rest }) {
   let formatedError = {

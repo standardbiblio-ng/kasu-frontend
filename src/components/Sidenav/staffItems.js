@@ -19,7 +19,7 @@ export default function SidenavItems() {
     const { asPath } = useRouter();
     const { open } = useToggle();
     useEffect(() => {
-        const user = useUserStore.getState().userDetails.user
+        const user = useUserStore.getState().userDetails?.user
         setNavs(data[user?.role])
     })
     return (
