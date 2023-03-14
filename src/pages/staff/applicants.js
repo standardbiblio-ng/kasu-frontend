@@ -3,7 +3,11 @@ import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import excel from '@assets/icons/excel.png'
 import Modal from '@component/Modals/Modal'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { useFetchApplicants } from '@hooks/useFetchApplicants.hook'
+import LoadingSpinner from "@component/LoadingSpinner/LoadingSpinner"
+import { useUploadApplicants } from '@hooks/useUploadApplicants'
 import * as XLSX from 'xlsx'
 export default function applicants() {
     const [showModal, setShowModal] = useState(false)
@@ -11,12 +15,18 @@ export default function applicants() {
     const [applicantExcelFile, setApplicantExcelFile] = useState(null)
     const [excelFileError, setExcelFileError] = useState(null)
     const [applicants, setApplicants] = useState([])
+    const [session, setSession] = useState()
 
     const { data, isLoading, isFetching } = useFetchApplicants()
+    const {
+        uploadApplicantData,
+        uploadApplicantLoading,
+        uploadApplicantError,
+        uploadApplicantMutate,
+        uploadApplicantSuccess } = useUploadApplicants()
     useEffect(() => {
         setApplicants(data?.data)
-    })
-    console.log(excelData)
+    }, [data])
     const closeModal = () => {
         setShowModal(!showModal)
     }
@@ -25,7 +35,6 @@ export default function applicants() {
         let selectedFile = e.target.files[0]
 
         if (selectedFile) {
-            console.log(selectedFile.type)
             if (selectedFile && supportedFileType.includes(selectedFile.type)) {
                 const reader = new FileReader()
                 reader.readAsArrayBuffer(selectedFile)
@@ -49,13 +58,44 @@ export default function applicants() {
             const worksheet = workBook.Sheets[workSheetName]
             const data = XLSX.utils.sheet_to_json(worksheet)
             setExcelData(data)
+            const submitData = {
+                applicants: data,
+                session: '63e7c5f47d2dbcfe520c1ad5'
+            }
+            console.log(submitData)
+            uploadApplicantMutate(submitData, {
+                onSuccess: (data) => {
+                    toast.success('Applicants uploaded', {
+                        icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#00923F" ><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M9.999 13.587 7.7 11.292l-1.412 1.416 3.713 3.705 6.706-6.706-1.414-1.414z"></path></svg>
+                    })
+                    closeModal()
+                },
+                onError: (error) => {
+                    toast.error(error.data.message);
+                    console.log(error)
+                }
+            })
         } else {
             setExcelData(null)
         }
     }
+    const handleSessionChange = (e) => {
+        setSession(e.target.value)
+    }
     return (
         <DashboardLayout>
-
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                progressStyle={{ backgroundColor: '#00923F', color: '#00923F' }}
+            />
             <div className='mt-7'>
                 <p className='text-primary text-sm'>Applicants</p>
             </div>
@@ -69,12 +109,21 @@ export default function applicants() {
                         <button onClick={() => { setShowModal(true) }} className='bg-primary rounded-2xl px-4 py-3 text-white'>Upload Applicant</button>
                         <Modal show={showModal} close={closeModal} title="Upload applicant">
                             <form encType="multipart/form-data">
-                                <input type="file"
-                                    name="upload"
-                                    id="upload"
-                                    onChange={handleExcelFile}
-                                />
-                                <button onClick={handleSubmitFile}>Upload</button>
+                                <div className='flex flex-col justify-start gap-3'>
+                                    <select name='session' onChange={handleSessionChange} className='border border-textColor rounded-md px-4 py-2'>
+
+                                        <option value='63e7c5f47d2dbcfe520c1ad5'>2022/2023</option>
+                                    </select>
+                                    <input type="file"
+                                        name="upload"
+                                        id="upload"
+                                        onChange={handleExcelFile}
+                                        className='border border-textColor rounded-md px-4 py-2'
+                                    />
+                                    <button onClick={handleSubmitFile} className='bg-primary px-3 py-2 rounded-md text-white'>
+                                        {(uploadApplicantLoading && !uploadApplicantError) ? <LoadingSpinner text="uploading applicants" /> : "Upload"}
+                                    </button>
+                                </div>
                             </form>
                         </Modal>
                     </div>
@@ -107,9 +156,9 @@ export default function applicants() {
                         </div>
                     </div>
 
-                    <div className="p-1.5 w-full inline-block align-middle bg-white mt-3 rounded-md overflow-auto">
+                    <div className="p-1.5 w-full max-w-96 inline-block align-middle bg-white mt-3 rounded-md overflow-auto">
                         <div className="overflow-auto  rounded-lg">
-                            <table className="min-w-full divide-y divide-textColor">
+                            <table className="min-w-full w-69 divide-y divide-textColor">
                                 <thead className="text-primary">
                                     <tr>
                                         {/* <th scope="col" className="py-3 pl-4">

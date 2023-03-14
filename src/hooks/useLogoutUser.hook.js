@@ -23,7 +23,12 @@ export const useLogoutUser = () => {
     reset();
     setUserData({});
     setIsAuthenticated(!isAuthenticated)
-    window.location.replace("/auth/signin")
+    if (userData.user.type == 'stundet' || userData.user.type == 'staff') {
+      window.location.replace("/auth/signin")
+    } else {
+      window.location.replace("/applicant/auth")
+    }
+
   };
 
   return {

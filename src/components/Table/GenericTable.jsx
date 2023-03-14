@@ -11,9 +11,6 @@ export function GenericTable(props) {
         () =>
             props?.data?.map((mockdata) => ({
                 ...mockdata,
-                // timestamp: moment
-                //   .unix(Number(mockdata.timestamp) / 1000)
-                //   .format("DD MMMM YYYY [\n] HH:mm"),
             })),
         []
     );

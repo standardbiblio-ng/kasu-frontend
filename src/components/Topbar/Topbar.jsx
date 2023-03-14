@@ -5,7 +5,7 @@ export default function Topbar() {
   const [userData, setUserData] = useState({})
   const [isAuthenticated, setIsAuthenticated] = useState({})
   useEffect(() => {
-    setUserData(useUserStore.getState().userDetails.user)
+    setUserData(useUserStore.getState().userDetails?.user)
     setIsAuthenticated(useUserStore.getState().isAuthenticated)
 
   })
@@ -62,7 +62,7 @@ export default function Topbar() {
                 />
               </svg>
             </a>
-            <p className="mx-8 text-lg font-semibold">{userData.lastName} {userData.firstname}</p>
+            <p className="mx-8 text-lg font-semibold">{userData?.lastName} {userData?.firstName}</p>
             <div
               style={{
                 backgroundImage: `url(${profile.src})`,

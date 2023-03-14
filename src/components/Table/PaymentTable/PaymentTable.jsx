@@ -4,19 +4,16 @@ import { useTable, useSortBy, usePagination, useFilters } from "react-table";
 import { COLUMNS } from "./columns";
 import MOCKDATA from "./MOCK_DATA.json";
 
-export function PaymentTable() {
+export function PaymentTable(props) {
   const columns = useMemo(() => COLUMNS, []);
   const data = useMemo(
     () =>
-      MOCKDATA.map((mockdata) => ({
+      props.data?.map((mockdata) => ({
         ...mockdata,
-        // timestamp: moment
-        //   .unix(Number(mockdata.timestamp) / 1000)
-        //   .format("DD MMMM YYYY [\n] HH:mm"),
       })),
     []
   );
-
+  console.log(props.data)
   const tableInstance = useTable(
     {
       columns,
@@ -50,13 +47,13 @@ export function PaymentTable() {
     state: { pageIndex, pageSize },
   } = tableInstance;
   return (
-    <div className="w-full  ">
-      <div className="bg-white w-full">
+    <div className="w-full rounded-md ">
+      <div className="bg-white w-full rounded-md">
         <table
           {...getTableProps()}
-          className="bg-white  w-full border-black/20 text-center text-sm relative shadow-sm"
+          className="bg-white  w-full border-black/20 text-center text-sm relative shadow-sm rounded-md"
         >
-          <thead className="bg-white">
+          <thead className="bg-white rounded-md">
             {headerGroups.map((headerGroup) => (
               <tr
                 {...headerGroup.getHeaderGroupProps()}
@@ -65,12 +62,12 @@ export function PaymentTable() {
                 {headerGroup.headers.map((column) => (
                   <th
                     {...column.getHeaderProps(column.getSortByToggleProps())}
-                    className="py-6  w-auto px-20"
+                    className="py-6  w-auto rounded-md"
                   >
                     {column.render("Header")}
-                    <span>
-                      {column.isSorted ? (column.isSortedDesc ? "1" : "2") : ""}
-                    </span>
+                    {/* <span>
+                      {column.isSorted ? (column.isSortedDesc ? "" : "2") : ""}
+                    </span> */}
                   </th>
                 ))}
               </tr>

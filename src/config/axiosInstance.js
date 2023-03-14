@@ -8,7 +8,7 @@ const instanceSettings = {
   timeout: 300000,
 };
 let jwt = useUserStore?.getState()?.userDetails?.token;
-
+let token = useUserStore.subscribe((state) => state.userDetails?.token, console.log('tokenize', jwt))
 function formatResponseError({ response, ...rest }) {
   let formatedError = {
     message:

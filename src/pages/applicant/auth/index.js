@@ -2,8 +2,8 @@ import { useRouter } from 'next/router'
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useState } from 'react';
 import { useLoginFormValidation } from "@hooks/formValidations/loginFormValidation.schema";
-import { useLogin } from "@hooks/useLogin.hook";
 import LoadingSpinner from "@component/LoadingSpinner/LoadingSpinner"
+import { useApplicantLogin } from '@hooks/useApplicantLogin';
 import { AiOutlineWarning } from "react-icons/ai";
 // import ToastBox from "@components/ToastBox/ToastBox";
 import { ToastContainer, toast } from 'react-toastify';
@@ -26,7 +26,7 @@ export default function Login() {
         setShowDialogue(false);
     };
 
-    const { mutate, isLoading, isError } = useLogin();
+    const { mutate, isLoading, isError } = useApplicantLogin();
     const onSubmitHandler = (values) => {
         mutate(values, {
             onSuccess: (data) => {
@@ -36,12 +36,11 @@ export default function Login() {
                 const user = data?.data?.user
                 // console.log(token)
                 if (user?.type == 'staff') {
-                    // router.push('/staff')
-                    window.location.replace("/staff")
+                    router.push('/staff')
                 } else if (user?.type == 'student') {
-                    // router.push('/student')
-                    window.location.replace("/student")
-
+                    router.push('/student')
+                } else {
+                    router.push('/applicant')
                 }
             },
             onError: (error) => {
@@ -85,8 +84,8 @@ export default function Login() {
                     <div className='flex flex-col items-start pr-14 pl-7 '>
                         <p className='text-lg mt-5'>Welcome to </p>
                         <p className='text-bold text-primary mb-7'>KASU SMS</p>
-                        <p className='text-xs text-textColor'>-Username is your full-name and Matric no is your password.</p>
-                        <p className='text-xs text-textColor'>-Students <span className='text-btnColor'>without Matric no.</span> your password is your Jamb reg. number</p>
+                        <p className='text-xs text-textColor'>-Email is your registered with jamb.</p>
+                        <p className='text-xs text-textColor'>-Password: use your <span className='text-btnColor'>State of origin</span> as your password </p>
                     </div>
                     <div className='flex flex-col items-start w-[420px]'>
                         <form onSubmit={formik.handleSubmit} >
