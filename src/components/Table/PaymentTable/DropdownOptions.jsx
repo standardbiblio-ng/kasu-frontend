@@ -1,7 +1,25 @@
-import React, { useState } from "react";
-
+import React, { useEffect, useState } from "react";
+import { useUserStore } from "@store/userStore.store";
+import { useAcceptanceFee } from "@hooks/useAcceptanceFee.hook";
 const DropdownOptions = () => {
   const [open, setOpen] = useState(false);
+  const [paymentLink, setPaymentLink] = useState()
+  const { data, isLoading, isError, isSuccess, mutate } = useAcceptanceFee()
+  useEffect(() => {
+    const user = useUserStore.getState().userDetails.user
+    const paymentId = user?.payments[0].id
+    const initializePaymnet = (id) => {
+      mutate(id, {
+        onSuccess: (data) => {
+          console.log(data)
+        },
+        onError: (error) => {
+          console.log(error)
+        }
+      })
+    }
+    initializePaymnet(paymentId)
+  }, [])
   return (
     <>
       <div className="w-full flex justify-center">
@@ -49,9 +67,11 @@ const DropdownOptions = () => {
                       />
                     </svg>
                   </div>
-                  <div className="text-black">Generate slip</div>
+                  <div className="text-black">Pay</div>
                 </div>
               </div>
+
+
             </div>
           )}
         </div>

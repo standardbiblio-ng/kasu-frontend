@@ -1,5 +1,7 @@
+import { useUserStore } from '@store/userStore.store';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 import { useToggle } from '../../context/dashboard.context';
 
 import data from './studentNavItems';
@@ -15,11 +17,18 @@ const style = {
 
 export default function SidenavItems() {
     const { asPath } = useRouter();
+    const [navs, setNavs] = useState()
     const { open } = useToggle();
+    useEffect(() => {
+        const user = useUserStore.getState().userDetails?.user
+        console.log(user?.type)
+        user?.type == 'student' ? setNavs(data['student']) : setNavs(data['applicant'])
+
+    }, [])
     return (
         <ul className="pl-5 mx-auto w-full mt-[8rem]">
             <li>
-                {data.map((item) => (
+                {navs?.map((item) => (
                     <Link href={item.link} key={item.title}>
                         <div className={`my-2 ${item.link === asPath ? style.active : style.link}`}>
                             <div

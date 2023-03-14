@@ -13,7 +13,7 @@ export const useLoginFormValidation = (onSubmitHandler) => {
         .required("This field is empty!"),
       password: Yup.string()
         .required("This field is empty!")
-        .min(8, "Password is too short - should contain min. 8 characters")
+        .min(2, "Password is too short - should contain min. 2 characters")
     }),
     onSubmit: onSubmitHandler,
   });
