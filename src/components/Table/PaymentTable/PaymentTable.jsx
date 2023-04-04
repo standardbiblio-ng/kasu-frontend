@@ -8,7 +8,7 @@ export function PaymentTable(props) {
   const columns = useMemo(() => COLUMNS, []);
   const tableData = [{
     feeType: props?.data?.feeType,
-    session: props?.data?.session.session,
+    session: props?.data?.session?.session,
     totalAmount: props.data?.totalAmount,
     status: props?.data?.paid ? 'Paid' : 'Pending'
   }]
