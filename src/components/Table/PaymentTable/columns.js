@@ -11,7 +11,7 @@ export const COLUMNS = [
   {
     Header: "Category",
     Footer: "Category",
-    accessor: "category",
+    accessor: "feeType",
   },
   {
     Header: "Session",
@@ -21,12 +21,7 @@ export const COLUMNS = [
   {
     Header: "Amount",
     Footer: "Amount",
-    accessor: "amount",
-  },
-  {
-    Header: "Outstanding",
-    Footer: "Outstanding",
-    accessor: "outstanding",
+    accessor: "totalAmount",
   },
   {
     Header: "Status",

@@ -1,9 +1,9 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-export default function Card() {
+export default function Card(props) {
     const router = useRouter()
-    const showCourseDetails = () => {
-        router.push('courses/details')
+    const showCourseDetails = (courseId) => {
+        router.push(`courses/${courseId}`)
     }
 
     return (
@@ -34,10 +34,10 @@ export default function Card() {
                     </svg>
                 </div>
                 <div className='px-4'>
-                    <p className='text-sm -mt-3'>COCS401</p>
+                    <p className='text-sm -mt-3'>{props.course?.code}</p>
                     <p className='text-sm text-primary'>Computer Science</p>
                     <p className='text-xs'>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        {props.course?.title}
                     </p>
                     <div className='text-sm flex gap-2 cursor-pointer items-center justify-between py-2 text-btnWarning'>
                         <span className='flex items center gap-2'>
@@ -54,7 +54,7 @@ export default function Card() {
                             student: 200
 
                         </span>
-                        <button onClick={showCourseDetails}>
+                        <button onClick={() => showCourseDetails(props?.course?._id)}>
                             <svg width="15" height="16" viewBox="0 0 15 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M7 5.75L9.25 8L7 10.25" stroke="black" strokeOpacity="0.72" strokeLinecap="round" strokeLinejoin="round" />
                                 <path d="M1 8C1 8.88642 1.17459 9.76417 1.51381 10.5831C1.85303 11.4021 2.35023 12.1462 2.97703 12.773C3.60382 13.3998 4.34794 13.897 5.16689 14.2362C5.98583 14.5754 6.86358 14.75 7.75 14.75C8.63642 14.75 9.51417 14.5754 10.3331 14.2362C11.1521 13.897 11.8962 13.3998 12.523 12.773C13.1498 12.1462 13.647 11.4021 13.9862 10.5831C14.3254 9.76417 14.5 8.88642 14.5 8C14.5 6.20979 13.7888 4.4929 12.523 3.22703C11.2571 1.96116 9.54021 1.25 7.75 1.25C5.95979 1.25 4.2429 1.96116 2.97703 3.22703C1.71116 4.4929 1 6.20979 1 8V8Z" stroke="black" strokeOpacity="0.72" strokeLinecap="round" strokeLinejoin="round" />

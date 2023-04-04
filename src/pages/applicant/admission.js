@@ -2,16 +2,82 @@ import EditProfileModal from "@component/Modals/EditProfileModal";
 import { useEffect, useState } from "react";
 import { useUserStore } from "@store/userStore.store";
 import DashboardLayout from "../../layout/dashboardLayout";
+import { useUploadOlevel } from "@hooks/useUploadOlevel";
 import { set } from "lodash";
+import LoadingSpinner from "@component/LoadingSpinner/LoadingSpinner"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function Admission() {
     const [file, setFile] = useState();
-
-    const handleFileChange = (e) => {
-        if (e.target.files) {
-            setFile(e.target.files[0]);
+    const [olevel, setOlevel] = useState([
+        { subject: "English language", grade: "" },
+        { subject: "Mathematics", grade: "" }
+    ])
+    const [examDetails, setExamDetails] = useState(
+        {
+            examName: "",
+            examNo: "",
+            examYear: ""
         }
+    )
+    const { mutate, isLoading, isError, data, isSuccess } = useUploadOlevel()
+
+    const handleFormChange = (index, event) => {
+        let data = [...olevel]
+        data[index][event.target.name] = event.target.value
+        setOlevel(data)
     };
+
+    const addSubject = () => {
+        let newSubject = { subject: "", grade: "" }
+        setOlevel([...olevel, newSubject])
+    }
+    const removeSubject = (index) => {
+        let data = [...olevel]
+        data.splice(index, 1)
+        setOlevel(data)
+    }
+
+    const submitOlevel = (e) => {
+        e.preventDefault();
+        const olevelData = {
+            olevel: [{
+                examYear: examDetails.examYear,
+                examNo: examDetails.examNo,
+                examName: examDetails.examName,
+                grades: olevel
+            }]
+        }
+        if (olevel.length < 5) {
+            toast.error("Olevel Subject should be atleast 5 subjects");
+            return
+        }
+        mutate(olevelData, {
+            onSuccess: () => {
+                toast.success('Olevel uploaded', {
+                    icon: <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#00923F" ><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"></path><path d="M9.999 13.587 7.7 11.292l-1.412 1.416 3.713 3.705 6.706-6.706-1.414-1.414z"></path></svg>
+                })
+                console.log('Uploaded olevel')
+            },
+            onError: (error) => {
+                // console.log('Error:', error.data.message)
+                toast.error(error?.data?.message);
+
+            },
+            onSettled: () => {
+                console.log('Settled')
+            }
+        })
+
+    }
+    const handleExamDetailsChange = (event) => {
+        let examData = { ...examDetails }
+        examData[event.target.name] = event.target.value
+        setExamDetails(examData)
+
+    }
 
     const handleUploadClick = () => {
         if (!file) {
@@ -45,6 +111,18 @@ export default function Admission() {
     }, [user])
     return (
         <DashboardLayout>
+            <ToastContainer
+                position="top-right"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                progressStyle={{ backgroundColor: '#00923F', color: '#00923F' }}
+            />
             <section className="w-full h-full py-4">
                 {/* breadcrumb */}
                 <span className="my-8 text-primary">Admission</span>
@@ -88,60 +166,87 @@ export default function Admission() {
                             update
                         </button> */}
                     </div>
-                    <div className="my-8 w-1/2 h-[70vh] py-8 bg-white grid grid-cols-1 items-start justify-items-stretch rounded-md">
-                        <div className="w-full h-full flex flex-col items-center justify-between">
-                            <div className="w-[90%]">
-                                <div className="flex flex-col items-center justify-center w-full">
-                                    <label
-                                        for="dropzone-file"
-                                        className="flex flex-col items-center justify-center w-full h-fit border-2 border-black/50 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600"
-                                    >
-                                        <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                                            <svg
-                                                aria-hidden="true"
-                                                className="w-10 h-10 mb-3 text-black/50"
-                                                fill="none"
-                                                stroke="currentColor"
-                                                viewBox="0 0 24 24"
-                                                xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                                                ></path>
-                                            </svg>
-                                            <p className="mb-2 text-lg text-black/80">
-                                                <span className="font-semibold">Click to upload</span>{" "}
-                                                O’levels/A’levels result
-                                            </p>
-                                            <p className="text-sm text-black/50">format: pdf only</p>
-                                        </div>
-                                        <input
-                                            id="dropzone-file"
-                                            type="file"
-                                            onChange={handleFileChange}
-                                            className="hidden"
-                                        />
-                                    </label>
-                                    <div className="text-sm text-primary font-semibold">
-                                        {file && `${file.name}`}
-                                    </div>
+                    <div className="my-8 w-[50%] h-[70vh] py-8 px-5 bg-white grid grid-cols-1 items-start justify-items-stretch rounded-md">
+                        <form onSubmit={submitOlevel}>
+                            <div className="flex flex-col items-start justify-start rounded-md px-2 py-2 gap-5 w-[98%] h-96 overflow-y-scroll">
+                                <div className="flex text-sm text-textColor">
 
-                                    {/* <button onClick={handleUploadClick}>Upload</button> */}
+                                    <div>
+                                        <label>Exam type</label>
+                                        <select name="examName" onChange={handleExamDetailsChange} value={examDetails.examName} className="bg-textColor rounded-md px-2 py-2 text-white focus:outline-none w-32">
+                                            <option>WAEC</option>
+                                            <option>NECO</option>
+                                            <option>NABTEB</option>
+                                            <option>GCE</option>
+                                        </select>
+                                    </div>
+                                    <div>
+                                        Exam Number
+                                        <input name="examNo" onChange={handleExamDetailsChange} value={examDetails.examNo} type="text" className="bg-textColor rounded-md px-2 py-2 text-white focus:outline-none w-38" />
+                                    </div>
+                                    <div>
+                                        Exam Year
+                                        <select name="examYear" onChange={handleExamDetailsChange} value={examDetails.examYear} className="bg-textColor rounded-md px-2 py-2 text-white focus:outline-none w-24">
+                                            <option>2010</option>
+                                            <option>2011</option>
+                                            <option>2012</option>
+                                            <option>2013</option>
+                                            <option>2014</option>
+                                            <option>2015</option>
+                                            <option>2016</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <hr />
+
+                                {olevel.map((input, index) => (
+                                    <div key={index} className="flex justify-start gap-5">
+                                        <div className="bg-textColor text-white px-2 py-2 rounded-md text-sm ">
+                                            {/* <input type="text" className="bg-textColor text-white px-2 py-2 rounded-md focus:outline-none" name="subject" placeholder="Subject" /> */}
+                                            <select disabled={index == 0 || index == 1} name="subject" value={input.subject} onChange={event => handleFormChange(index, event)} className="bg-textColor text-white  rounded-md focus:outline-none w-52">
+                                                <option>English Language</option>
+                                                <option>Mathematics</option>
+                                                <option>Biology</option>
+                                                <option>Chemistry</option>
+                                                <option>Physics</option>
+                                            </select>
+                                        </div>
+                                        <div className="bg-textColor text-white px-2 py-2 rounded-md text-sm">
+                                            {/* <input type="text" className="bg-textColor text-white px-2 py-2 rounded-md focus:outline-none" name="grade" placeholder="Grade" /> */}
+                                            <select name="grade" value={input.grade} onChange={event => handleFormChange(index, event)} className="bg-textColor text-white  focus:outline-none w-20">
+                                                <option>Select grade</option>
+                                                <option >A</option>
+                                                <option >B</option>
+                                                <option >C</option>
+                                                <option >D</option>
+                                                <option >E</option>
+                                                <option >F</option>
+                                            </select>
+                                        </div>
+                                        {index > 1 && <div>
+                                            <button type="button" onClick={() => removeSubject(index)} className="bg-btnWarning rounded-md px-2 py-2 text-white text-sm w-20">Delete</button>
+                                        </div>}
+                                    </div>
+                                ))}
+                                <div>
+                                    <button type="button" onClick={addSubject} className="bg-primary px-2 py-2 rounded-md text-white text-sm w-[100%]">Add subject</button>
                                 </div>
                             </div>
-                            <p className="text-sm text-black/50">
-                                <span className=" text-btnColor font-bold">Note:</span> For
-                                admission to be processed, a copy of your O'level result must be
-                                uploaded
-                            </p>
-                        </div>
+                            <hr className="text-textColor mt-3" />
+                            {olevel.length >= 5 && <div className="mt-3">
+                                <button onClick={submitOlevel} className="bg-secondary px-2 py-2 rounded-md text-sm">
+                                    {(isLoading && !isError) ? <LoadingSpinner text="Please wait..." /> : "Submit"}
+                                </button>
+                            </div>}
+                        </form>
+                        <p className="text-sm text-black/50">
+                            <span className=" text-btnColor font-bold">Note:</span> For
+                            admission to be processed, you need to add atleast five subject
+                        </p>
                     </div>
                 </div>
                 <EditProfileModal show={showModal} close={closeModal} />
             </section>
-        </DashboardLayout>
+        </DashboardLayout >
     );
 }

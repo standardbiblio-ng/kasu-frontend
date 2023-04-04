@@ -47,6 +47,7 @@ export default function Login() {
             onError: (error) => {
                 toast.error(error.data.message);
                 // console.log(error.data.message)
+                console.log('response error', error)
             },
             onSettled: (data) => {
 

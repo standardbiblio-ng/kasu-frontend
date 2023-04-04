@@ -6,9 +6,15 @@ import MOCKDATA from "./MOCK_DATA.json";
 
 export function PaymentTable(props) {
   const columns = useMemo(() => COLUMNS, []);
+  const tableData = [{
+    feeType: props?.data?.feeType,
+    session: props?.data?.session.session,
+    totalAmount: props.data?.totalAmount,
+    status: props?.data?.paid ? 'Paid' : 'Pending'
+  }]
   const data = useMemo(
     () =>
-      props.data?.map((mockdata) => ({
+      tableData.map((mockdata) => ({
         ...mockdata,
       })),
     []

@@ -3,6 +3,7 @@ import { useMutation } from "react-query";
 import { useUserStore } from "@store/userStore.store";
 import shallow from "zustand/shallow";
 import { loginData } from "@services/mutation/login.service";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const useLogin = () => {
   const [populateUserInfoAndJwt] = useUserStore(
@@ -24,8 +25,9 @@ export const useLogin = () => {
     },
     onError: (error) => {
       // add error toast
-      // alert(error.data.message)
-      return console.log("An error occured");
+      // toast.error('An error occured')
+      alert('An error occured')
+      // return console.log("An error occured");
     },
   });
 
