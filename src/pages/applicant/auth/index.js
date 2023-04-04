@@ -35,12 +35,13 @@ export default function Login() {
                 })
                 const user = data?.data?.user
                 // console.log(token)
-                if (user?.type == 'staff') {
-                    router.push('/staff')
+                if (user?.type == 'applicant') {
+                    router.push('/applicant')
                 } else if (user?.type == 'student') {
                     router.push('/student')
                 } else {
-                    router.push('/applicant')
+                    // router.push('/applicant')
+                    window.location.replace('/applicant')
                 }
             },
             onError: (error) => {

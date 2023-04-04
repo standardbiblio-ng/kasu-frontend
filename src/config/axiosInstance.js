@@ -10,18 +10,18 @@ const instanceSettings = {
 let jwt = useUserStore?.getState()?.userDetails?.token;
 let token = useUserStore.subscribe((state) => state.userDetails?.token, console.log('tokenize', jwt))
 function formatResponseError({ response, ...rest }) {
-  let formatedError = {
-    message:
-      response?.data?.message === "An internal server error occurred"
-        ? "Something went wrong, try again"
-        : response?.data?.message?.[0]?.messages?.[0]?.message ===
-          "An internal server error occurred"
-          ? "Something went wrong, try again"
-          : response?.data?.message?.[0]?.messages?.[0]?.message ||
-          response?.data?.message ||
-          "Something went wrong, try again",
-    ...rest,
-  };
+  // let formatedError = {
+  //   message:
+  //     response?.data?.message === "An internal server error occurred"
+  //       ? "Something went wrong, try again"
+  //       : response?.data?.message?.[0]?.messages?.[0]?.message ===
+  //         "An internal server error occurred"
+  //         ? "Something went wrong, try again"
+  //         : response?.data?.message?.[0]?.messages?.[0]?.message ||
+  //         response?.data?.message ||
+  //         "Something went wrong, try again",
+  //   ...rest,
+  // };
   return Promise.reject(response);
 }
 

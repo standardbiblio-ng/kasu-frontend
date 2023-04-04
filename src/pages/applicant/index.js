@@ -7,10 +7,18 @@ import "react-circular-progressbar/dist/styles.css";
 import FullCalendar from '@fullcalendar/react' // must go before plugins
 import dayGridPlugin from '@fullcalendar/daygrid' // a plugin!
 import { useUserStore } from '@store/userStore.store';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useFetchDashboardStats } from '@hooks/useFetchDashBoardStats.hook';
 
 export default function Dashboard() {
-
+    const [dashboardStats, setDashboardStats] = useState()
+    const { data, isLoading, isFetching, isError, isSuccess } = useFetchDashboardStats()
+    useEffect(() => {
+        const user = useUserStore.getState().userDetails?.user
+        console.log(user)
+        setDashboardStats(data?.data)
+    }, [])
+    console.log(data?.data)
     const circularData = [
         {
             id: 1,
@@ -18,6 +26,7 @@ export default function Dashboard() {
             percentage: 20,
             pathColor: '#9747FF',
             trailColor: 'rgba(151, 71, 255, 0.2)',
+            text: dashboardStats?.admissionStatus
         },
         {
             id: 2,
@@ -25,6 +34,7 @@ export default function Dashboard() {
             percentage: 85,
             pathColor: '#FFED47',
             trailColor: 'rgba(255, 237, 71, 0.2)',
+            text: dashboardStats?.acceptanceStatus
         },
         {
             id: 3,
@@ -32,6 +42,7 @@ export default function Dashboard() {
             percentage: 10,
             pathColor: '#F94343',
             trailColor: 'rgba(249, 67, 67, 0.2)',
+            text: 'Pending'
         },
         {
             id: 4,
@@ -39,12 +50,9 @@ export default function Dashboard() {
             percentage: 69,
             pathColor: '#0233DF33',
             trailColor: 'rgba(2, 51, 223, 0.2)',
+            text: 'Pending'
         },
     ]
-    useEffect(() => {
-        const user = useUserStore.getState().userDetails?.user
-        console.log(user)
-    }, [])
     return (
         <DashboardLayout>
             <section className='w-full h-full py-4'>
@@ -64,7 +72,7 @@ export default function Dashboard() {
                                         <div className="w-3/5 mx-auto">
                                             <CircularProgressbar
                                                 value={items.percentage}
-                                                text={`${items.percentage}%`}
+                                                text={`${items?.text}`}
                                                 styles={buildStyles({
                                                     textColor: "black",
                                                     pathColor: `${items.pathColor}`,

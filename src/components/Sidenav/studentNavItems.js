@@ -48,12 +48,12 @@ const data = {
         {
             title: 'dashboard',
             icon: <DashboardIcon />,
-            link: '/student',
+            link: '/applicant',
         },
         {
             title: 'Profile',
             icon: <ProfileIcon />,
-            link: '/student/profile',
+            link: '/applicant/profile',
         },
         {
             title: 'Payment',
@@ -63,7 +63,7 @@ const data = {
         {
             title: 'admission',
             icon: <AdmissionIcon />,
-            link: '/student/admission',
+            link: '/applicant/admission',
         }
     ]
 }

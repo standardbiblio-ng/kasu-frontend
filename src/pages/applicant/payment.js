@@ -4,21 +4,14 @@ import { useEffect, useState } from "react";
 import DashboardLayout from "../../layout/dashboardLayout";
 export default function Payment() {
     const [tableData, setTableData] = useState([])
-    const [user, setUser] = useState()
-    const applicantPaymentData = [
-        {
-            "category": "Acceptance fee",
-            "session": "2019/2022",
-            "amount": "$373379704.64",
-            "outstanding": "$79876410.44",
-            "status": user?.acceptance?.paymentStatus == 'paid' ? 'Paid' : 'Pending',
-            "action": null
-        }
-    ]
+    const [user, setUser] = useState(useUserStore?.getState()?.userDetails?.user)
+    const [applicantPaymentData, setApplicantPaymentData] = useState([])
     useEffect(() => {
-        const userData = useUserStore?.getState()?.userDetails?.user
-        setUser(userData)
-        userData?.type == 'student' ? setTableData(studentPaymentsData) : setTableData(applicantPaymentData)
+        // const userData = useUserStore?.getState()?.userDetails?.user
+        // setUser(userData)
+        // userData?.type == 'student' ? setTableData(studentPaymentsData) : setTableData(applicantPaymentData)
+        // console.log(user?.payments)
+        setTableData(user?.payments)
     }, [])
     console.log(user)
     return (
@@ -27,7 +20,7 @@ export default function Payment() {
                 {/* breadcrumb */}
                 <span className="my-8 text-primary">Payment</span>
                 <div className="flex mt-8">
-                    <PaymentTable data={applicantPaymentData} />
+                    <PaymentTable data={user?.payments[0]} />
                 </div>
             </section>
         </DashboardLayout>
